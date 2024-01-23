@@ -1,0 +1,64 @@
+
+#featuredCard {
+    display: flex;
+    gap: 30px;
+}
+
+#featuredCardTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#featuredCardThree {
+    display: flex;
+    justify-content: space-between; 
+
+}
+
+
+#featuredTwoBox {
+    border: 1px solid black;
+    height: 250px; 
+    width: 750px ;
+    display: flex;
+
+}
+
+#featuredOne { 
+    height: 500px;
+    width: 500px;
+ border: 1px solid black;
+}
+
+#featuredTwo {
+    border: 1px solid black;
+    height: 250px; 
+    width: 1000px ;
+}
+
+#featuredTwo {
+    border: 1px solid black;
+    height: 250px; 
+    width: 1000px ;
+}
+
+.featuredThree {
+    border: 1px solid black;
+    height: 240px;
+    width: 240px;
+}
+
+#cardBlockNewarrival {
+    height: 650px;
+    width: calc(100% - 400px);
+    margin: 50px 200px;
+   
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}

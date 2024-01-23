@@ -1,35 +1,32 @@
-import { Button } from '@mui/material'
-import './categories.css'
-import CategorieCard from './subcomponents/categorieCard'
+import { Button } from "@mui/material";
+import CategorieCard from "./subcomponents/categorieCard";
 
-function Categories() {
-   
+function Exploreproduct() {
     return (
-        <> 
-              <div id='cardBlock' >
+        <>
+        <div id='cardBlock' >
                      <div id="title" >
                             <div id="block" >
                                     
                             </div>
                             <div id='titleText' >
-                                Today's
+                                This Month
                             </div>
                      </div>
                      <div id="subTitleAndTime" >
                             <div id='subTitleAndTitleText' >
-                                Flash Sales
+                                Best Selling Products
                             </div>
                      </div>
                      <div id="cardDisplay" >
-                           <CategorieCard></CategorieCard>
+                          <CategorieCard></CategorieCard>
                      </div>
                      <div id="viewAllProduct" >
                      <Button sx={{backgroundColor : "red" , ":hover"  : { backgroundColor : "#BF3131"}}} variant="contained">View All</Button>
                      </div>
               </div>
-
         </>
     )
 }
 
-export default Categories
+export default Exploreproduct ;

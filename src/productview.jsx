@@ -1,4 +1,4 @@
-import Box from "./components/box"
+
 import Navbar from "./components/navbar"
 
 
@@ -8,9 +8,9 @@ function Productview() {
     <div>
         <Navbar></Navbar>
         <div>
-            <Box>
-                
-            </Box>
+            <div id="productGrid" >
+
+            </div>
         </div>
     </div>
     </>

@@ -1,8 +1,38 @@
-#cardBlock {
-    height: 550px;
+
+#categories {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 30px;
+}
+
+
+.categoryContainer {
+height: 200px;
+width: 200px;
+border: 1px solid black;
+
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconText {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#cardBlockCategory {
+    height: 350px;
     width: calc(100% - 400px);
     margin: 50px 200px;
-    border: 2px solid black;
+    
 }
 #block {
     height: 50px;
@@ -30,11 +60,4 @@
     font-size: 45px; 
     margin: 10px;
     font-family: 'Roboto Condensed', sans-serif;
-}
-
-#viewAllProduct {
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    height: 70px;
 }
