@@ -1,8 +1,13 @@
 import { Button } from '@mui/material'
 import './categories.css'
 import CategorieCard from './subcomponents/categorieCard'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-function Categories() {
+function Categories({products}) {
+  
+     const navigate = useNavigate()
+   
    
     return (
         <> 
@@ -20,11 +25,23 @@ function Categories() {
                                 Flash Sales
                             </div>
                      </div>
-                     <div id="cardDisplay" >
-                           <CategorieCard></CategorieCard>
+                     <div id="cardDisplay" > 
+                           {
+                            products.map((product) => ( 
+                                <div id='cardStyle' >
+                                <CategorieCard 
+                                key={product._id}
+                                productName={product.productName}
+                                price={product.price}
+                                image={product.imageUrl}
+                                ></CategorieCard>
+                                </div>
+                            )) 
+                           }
+                          
                      </div>
                      <div id="viewAllProduct" >
-                     <Button sx={{backgroundColor : "red" , ":hover"  : { backgroundColor : "#BF3131"}}} variant="contained">View All</Button>
+                     <Button onClick={() => {navigate('/productview')}}  sx={{backgroundColor : "red" , ":hover"  : { backgroundColor : "#BF3131"}}} variant="contained">View All</Button>
                      </div>
               </div>
 

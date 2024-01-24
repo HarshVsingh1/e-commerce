@@ -1,5 +1,6 @@
 
 import Navbar from "./components/navbar"
+import ProductCard from "./components/subcomponents/productCard"
 
 
 function Productview() {
@@ -9,7 +10,10 @@ function Productview() {
         <Navbar></Navbar>
         <div>
             <div id="productGrid" >
+                       <ProductCard 
+                            >
 
+                       </ProductCard>
             </div>
         </div>
     </div>

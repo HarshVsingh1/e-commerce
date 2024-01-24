@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
 import ProductCard from './components/subcomponents/productCard';
+import './productpage.css'
+
 
 const Productpages = () => {
   const [products, setProducts] = useState([]);
@@ -32,20 +34,27 @@ const Productpages = () => {
         <div>
         <Navbar></Navbar>
         </div>
-        <div>
 
-      <h1>Product List</h1>
-      <ul>
-        {products.map((product) => (
-          
-          <ProductCard key={product._id}>{product.productName}
-            productName={product.productName} 
-            Price={product.price}
-            Image={product.imageUrl}
-            </ProductCard>
-        ))}
-      </ul>
-        </div>
+        <div>     
+          <div id='filterPannel' >
+
+          </div>
+                <div  id='productDisplay' >
+                       {products.map((product) => (
+                         
+                         <ProductCard
+                       key={product._id}
+                       productName={product.productName}
+                       description={product.description}
+                       Price={product.price}
+                       Image={product.imageUrl}
+                       />
+                       
+                       ))}
+                 
+                 </div>
+         </div>
+
         <div>
             <Footer></Footer>
         </div>

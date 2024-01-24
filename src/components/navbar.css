@@ -13,11 +13,18 @@
 
 .navButtons {
     font-size: larger;
-    font-weight: 600;
+    font-weight: 500;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
+    cursor: pointer;
 } 
 
 #logo {
     height: 40px;
+}
+
+#cartIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

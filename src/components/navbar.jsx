@@ -12,12 +12,13 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Navbar() {
     
+  
    
     const token = sessionStorage.getItem("token")
+    const email = sessionStorage.getItem('email')
     const [Token , setToken] = useState(null)
-    const username = sessionStorage.getItem("username")
     const navigate = useNavigate();
-
+    
 
   useEffect(() => {
     setToken(token)
@@ -80,23 +81,27 @@ function Navbar() {
     return <div style={{margin : "10px"}} >
            <div id="navBar">
     <div >
-        <img id="logo" src={logo} alt='my logo'></img>
+        <img onClick={() => {navigate('/')}} id="logo" src={logo} alt='my logo'></img>
     </div>
 
     <div id='navButton'>
-              <div className='navButtons'>
+              <div  onClick={() => {navigate('/')}} className='navButtons'>
                  Home
               </div> 
               <div className='navButtons'>
                  About
               </div>
-              <div className='navButtons'>
+              {token ? (<div onClick={() => {  sessionStorage.removeItem('token')  
+                 navigate('/')}} className='navButtons'>
+                 Logout
+              </div> ) : (<div onClick={() => {navigate('/signup')}} className='navButtons'>
                  Sign Up
-              </div> 
+              </div> )}
+              
              
     </div> 
     <div>
-    <div style={{margin : "0 20px" , width : "200px" }} >
+    <div style={{margin : "0 20px" , width : "200px" , height : "100%" , display : "flex" , alignItems : "center" }} >
               <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -107,12 +112,19 @@ function Navbar() {
             />
           </Search>
               </div>
-    </div>
+    </div> 
+    
+    {token ? (<div style={{display : "flex" , alignItems : "center"}} >
+      {email}
+    </div>) : (<div>
+      
+    </div>)}
+    
 
-    <div>
-    <IconButton aria-label="cart">
-      <StyledBadge badgeContent={4} color="secondary">
-        <ShoppingCartIcon />
+    <div id='cartIcon' >
+    <IconButton  sx={{backgroundColor : "grey" , ":hover"  : { backgroundColor : "grey"}}} aria-label="cart"> 
+      <StyledBadge  badgeContent={1} color="secondary">
+        <ShoppingCartIcon  sx={{color : "white" ,   borderRadius : "10px"  }} />
       </StyledBadge>
     </IconButton>
     </div>

@@ -2,7 +2,7 @@
     height: 550px;
     width: calc(100% - 400px);
     margin: 50px 200px;
-    border: 2px solid black;
+
 }
 #block {
     height: 50px;
@@ -37,4 +37,15 @@
     justify-content: center; 
     align-items: center;
     height: 70px;
+}
+
+#cardDisplay {
+    display: flex;
+    overflow: scroll; 
+    overflow-y: hidden;
+    
+}
+
+#cardStyle {
+    margin: 20px;
 }

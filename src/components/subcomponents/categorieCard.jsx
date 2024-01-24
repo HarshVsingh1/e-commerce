@@ -2,31 +2,28 @@ import { Box, Rating } from '@mui/material'
 import './categorieCard.css'
 import StarIcon from '@mui/icons-material/Star';
 
-function CategorieCard() {
+function CategorieCard({image , productName , price ,}) {
  
 
-   const mockdata = {
-      discount : "-40%" ,
-      productName : "Supra gendfaad gadi" ,
-      price : "₹400" ,
-      image : "https://wallpapercave.com/wp/wp10935405.jpg" , 
-      ratingValue : "2.7"
-   
-   }
+
 
    return (
      <>
            <div id="cardDimension" >
+                           
                  <div id='imageBox' >
-                        <img  style={{height : "250px" , width : "100%" , objectFit : "cover" }} src={mockdata.image}  ></img>   
+                        <img  style={{height : "250px" , width : "100%" , objectFit : "cover" , borderRadius : "20px" }} src={`data:image/png;base64,${image}`}  ></img>   
+                        
+
                  </div>
                  <div id='productName' >
-                    {mockdata.productName}
+                    {productName}
+                    
                  </div>
                  <div id='priceBox' >
-                   {mockdata.price}
+                 ₹{price}
                  </div>
-                 <div>
+                 <div  >
                  <Box sx={{
                        width: 200,
                        display: 'flex',
@@ -35,7 +32,7 @@ function CategorieCard() {
                    >
                      <Rating
                        name="text-feedback"
-                       value={mockdata.ratingValue}
+                       value={4.5}
                        readOnly
                        precision={0.5}
                        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}

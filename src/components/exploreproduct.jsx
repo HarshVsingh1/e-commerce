@@ -1,7 +1,9 @@
 import { Button } from "@mui/material";
 import CategorieCard from "./subcomponents/categorieCard";
+import { useNavigate } from "react-router-dom";
 
-function Exploreproduct() {
+function Exploreproduct({products}) {
+    const navigate =useNavigate()
     return (
         <>
         <div id='cardBlock' >
@@ -18,11 +20,23 @@ function Exploreproduct() {
                                 Best Selling Products
                             </div>
                      </div>
-                     <div id="cardDisplay" >
-                          <CategorieCard></CategorieCard>
+                     <div id="cardDisplay" > 
+                           {
+                            products.map((product) => ( 
+                                <div id='cardStyle' >
+                                <CategorieCard 
+                                key={product._id}
+                                productName={product.productName}
+                                price={product.price}
+                                image={product.imageUrl}
+                                ></CategorieCard>
+                                </div>
+                            )) 
+                           }
+                          
                      </div>
                      <div id="viewAllProduct" >
-                     <Button sx={{backgroundColor : "red" , ":hover"  : { backgroundColor : "#BF3131"}}} variant="contained">View All</Button>
+                     <Button onClick={() => {navigate('/productview')}}  sx={{backgroundColor : "red" , ":hover"  : { backgroundColor : "#BF3131"}}} variant="contained">View All</Button>
                      </div>
               </div>
         </>
