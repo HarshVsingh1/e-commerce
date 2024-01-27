@@ -6,8 +6,10 @@ import WatchIcon from '@mui/icons-material/Watch';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import HeadphonesIcon from '@mui/icons-material/Headphones';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import { useNavigate } from 'react-router-dom';
 
 function BrowseCategories() {
+    const navigate = useNavigate()
     return (
         <> 
                   <div id='cardBlockCategory' >
@@ -27,7 +29,7 @@ function BrowseCategories() {
                      </div>
 
                      <div id="categories" >
-                              <div className='categoryContainer' >
+                              <div  onClick={() => {navigate('/product/category/Phone')}}  className='categoryContainer' >
                                 <div className='icon' >
 
                                     <PhoneAndroidIcon sx={{fontSize : "100px"}} ></PhoneAndroidIcon>
@@ -37,7 +39,7 @@ function BrowseCategories() {
                                 </div>
                                
                               </div>
-                              <div className='categoryContainer' >
+                              <div onClick={() => {navigate('/product/category/Laptop')}}  className='categoryContainer' >
                                 <div className='icon' >
 
                                     <ComputerIcon sx={{fontSize : "100px"}} ></ComputerIcon>
@@ -46,7 +48,7 @@ function BrowseCategories() {
                                     </div>
                                 </div>
                               </div>
-                              <div className='categoryContainer' >
+                              <div onClick={() => {navigate('/product/category/Watch')}}  className='categoryContainer' >
                               <div className='icon' >
 
                                         <WatchIcon sx={{fontSize : "100px"}} ></WatchIcon>
@@ -55,7 +57,7 @@ function BrowseCategories() {
                                     </div>
                                </div> 
                               </div>
-                              <div className='categoryContainer' >
+                              <div onClick={() => {navigate('/product/category/Camera')}}  className='categoryContainer' >
                               <div className='icon' >
 
                                        <CameraAltIcon sx={{fontSize : "100px"}} ></CameraAltIcon>
@@ -64,7 +66,7 @@ function BrowseCategories() {
                                        </div>
                               </div>
                               </div>
-                              <div className='categoryContainer' >
+                              <div onClick={() => {navigate('/product/category/Headphone')}}  className='categoryContainer' >
                               <div className='icon' >
 
                                          <HeadphonesIcon sx={{fontSize : "100px"}}  ></HeadphonesIcon>
@@ -73,7 +75,7 @@ function BrowseCategories() {
                                     </div>
                               </div>
                               </div>
-                              <div className='categoryContainer' >
+                              <div onClick={() => {navigate('/product/category/Gaming')}}  className='categoryContainer' >
                               <div className='icon' >
 
                                       <SportsEsportsIcon sx={{fontSize : "100px"}}  ></SportsEsportsIcon>

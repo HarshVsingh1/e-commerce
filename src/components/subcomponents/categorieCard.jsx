@@ -1,10 +1,11 @@
 import { Box, Rating } from '@mui/material'
 import './categorieCard.css'
 import StarIcon from '@mui/icons-material/Star';
+import { useNavigate } from 'react-router-dom';
 
-function CategorieCard({image , productName , price ,}) {
+function CategorieCard({image , productName , price ,id}) {
  
-
+   const navigate = useNavigate()
 
 
    return (
@@ -12,7 +13,7 @@ function CategorieCard({image , productName , price ,}) {
            <div id="cardDimension" >
                            
                  <div id='imageBox' >
-                        <img  style={{height : "250px" , width : "100%" , objectFit : "cover" , borderRadius : "20px" }} src={`data:image/png;base64,${image}`}  ></img>   
+                        <img  onClick={ () => { navigate('/product/' + id )}} style={{height : "250px" , width : "100%" , objectFit : "cover" , borderRadius : "20px" }} src={`data:image/png;base64,${image}`}  ></img>   
                         
 
                  </div>

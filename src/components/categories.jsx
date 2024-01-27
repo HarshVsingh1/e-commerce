@@ -31,6 +31,7 @@ function Categories({products}) {
                                 <div id='cardStyle' >
                                 <CategorieCard 
                                 key={product._id}
+                                id={product._id}
                                 productName={product.productName}
                                 price={product.price}
                                 image={product.imageUrl}

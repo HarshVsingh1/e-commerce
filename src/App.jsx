@@ -2,13 +2,12 @@ import { useState } from 'react'
 import './App.css'
 import { BrowserRouter as   Router ,Route, Routes } from 'react-router-dom'
 import Homepage from './homepage'
-import Navbar from './components/navbar'
 import Admindashboard from './admindashboard'
-import Footer from './components/footer'
-import Productview from './productview'
 import Productpages from './productspage'
 import Signup from './signup'
 import Signin from './signin'
+import Singleproductview from './singleproduct'
+import Categoryproductpages from './categoryproductpage'
 function App() {
 
   return (
@@ -21,6 +20,8 @@ function App() {
           <Route path='/productview' element={<Productpages></Productpages>} />
           <Route path='/signup' element={<Signup></Signup>} />
           <Route path='/signin' element={<Signin></Signin>} />
+          <Route path='/product/:productId' element={<Singleproductview></Singleproductview>} />
+          <Route path='/product/category/:category' element={<Categoryproductpages></Categoryproductpages>} />
         </Routes>
        
       </Router>
