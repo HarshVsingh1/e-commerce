@@ -97,6 +97,13 @@ function Navbar() {
               </div> ) : (<div onClick={() => {navigate('/signup')}} className='navButtons'>
                  Sign Up
               </div> )}
+
+              {token && 
+                 
+                        <div  onClick={() => {navigate('/order')}} className='navButtons'>
+                 Orders
+              </div> 
+                }
               
              
     </div> 
@@ -121,7 +128,7 @@ function Navbar() {
     </div>)}
     
 
-    <div id='cartIcon' >
+    <div onClick={() => {navigate('/cart')}} id='cartIcon' >
     <IconButton  sx={{backgroundColor : "grey" , ":hover"  : { backgroundColor : "grey"}}} aria-label="cart"> 
       <StyledBadge  badgeContent={1} color="secondary">
         <ShoppingCartIcon  sx={{color : "white" ,   borderRadius : "10px"  }} />

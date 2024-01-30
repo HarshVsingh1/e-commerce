@@ -3,8 +3,7 @@ import playstation from '../assets/playstation.png'
 import perfume from '../assets/perfume.png'
 import dress from '../assets/dress.png'
 import headphone from '../assets/headphone.png'
-import shoes from '../assets/shoes.png'
-import playstationTwo from '../assets/playstationTwo.png'
+import modal from '../assets/modal.png'
 import headphoneTwo from '../assets/headphoneTwo.png'
 function Newarrival() {
     return (
@@ -32,7 +31,7 @@ function Newarrival() {
                            <div id='featuredCardTwo' >
                                    <div id='featuredTwoBox' >
                                     <div id='featuredTwo' >
-                                        <img src={playstation} className='image'  ></img>
+                                        <img src={modal} className='image'  ></img>
 
                                     </div>
                                      

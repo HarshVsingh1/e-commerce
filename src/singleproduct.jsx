@@ -3,15 +3,19 @@ import { useEffect, useState } from "react"
 import Footer from "./components/footer"
 import Navbar from "./components/navbar"
 import { useParams } from "react-router-dom"
-import { Box, Button, Rating } from "@mui/material"
+import { Alert, Box, Button, Rating, Snackbar } from "@mui/material"
 import StarIcon from '@mui/icons-material/Star';
 import './singleproduct.css'
 
 function Singleproductview() {
 
-  const {productId} = useParams()
-   {console.log(productId)}
+   const {productId} = useParams()
+   const token = sessionStorage.getItem('token')
+   const email = sessionStorage.getItem('email')
    const [product,setProduct] = useState([])
+   const [message,setMessage] = useState('')
+   const [servity,setServity] = useState('success')
+   const [open,setOpen] = useState(false) ;
 
    const fetchProduct = async () => {
      
@@ -26,7 +30,6 @@ function Singleproductview() {
 
         if(response.ok) {
           const data =  await response.json()
-           console.log(data)
           setProduct(data)
         } 
     }
@@ -34,14 +37,69 @@ function Singleproductview() {
 
     }
       
-   }  
+   }   
+   
+   const handleClose = () => {
+    setOpen(false)
+  }
+
+ 
+
+  
+   
+  
+  
+  const openbox = (message , servity ) => {
+    setMessage(message)
+        setServity(servity)
+        setOpen(true)
+    
+    
+     
+  }
+
+
 
    useEffect(() => {
             fetchProduct()
    },[])
+   
+
+  const addtocart = async() => { 
+
+    try {
+      const response = await fetch('http://localhost:3000/user/addtocart' , {
+        method :'POST' ,
+        headers : {
+          'Content-Type' : 'application/json' ,
+          authorization : token
+        } ,
+        body : JSON.stringify({
+         email ,
+         productId
+        })
+      }) 
+
+      if(response.ok){
+        openbox('product added to cart successfuly' , "success")
+      }
+    }catch(error) { 
+      console.error('Error :', error.message);
+             console.log('error while adding product to cart')
+    }
+       
+
+  }
+  
+
 
   return (
     <>
+            <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+      <Alert onClose={handleClose} severity={servity} sx={{ width: '100%' }}>
+        {message}
+      </Alert>
+    </Snackbar> 
     <div>
         <Navbar></Navbar>
         <div>
@@ -82,7 +140,7 @@ function Singleproductview() {
 
                             <div id='productButtonSection' >
                                    <div  >
-                                   <Button sx={{backgroundColor : "red" , ":hover"  : { backgroundColor : "#BF3131"}}} variant="contained">Add to cart</Button>
+                                   <Button onClick={() => {addtocart()}} sx={{backgroundColor : "red" , ":hover"  : { backgroundColor : "#BF3131"}}} variant="contained">Add to cart</Button>
                                    </div>
                                    <div>
                                    <Button sx={{backgroundColor : "red" , ":hover"  : { backgroundColor : "#BF3131"}}} variant="contained">Buy Now</Button>

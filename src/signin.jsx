@@ -12,7 +12,7 @@ function Signin() {
     const navigate = useNavigate()
     
     const [email,setEmail] = useState('')
-    const [Password,setPassword] = useState('')
+    const [password,setPassword] = useState('')
     const [servity,setServity] = useState('success')
     const [user, setUser] = useState('');
     const [message,setMessage] = useState('')
@@ -57,7 +57,7 @@ function Signin() {
                 },
                 body :  JSON.stringify({
                     email ,
-                    Password
+                    password
                 }) 
               })
 

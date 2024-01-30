@@ -18,7 +18,7 @@
 
 
 #featuredTwoBox {
-    border: 1px solid black;
+    
     height: 250px; 
     width: 750px ;
     display: flex;
@@ -32,21 +32,18 @@
 }
 
 #featuredTwo {
-    border: 1px solid black;
+    
     height: 250px; 
     width: 1000px ;
 }
 
-#featuredTwo {
-    border: 1px solid black;
-    height: 250px; 
-    width: 1000px ;
-}
+
 
 .featuredThree {
     border: 1px solid black;
     height: 240px;
-    width: 240px;
+    width: 240px; 
+    margin-top: 20px;
 }
 
 #cardBlockNewarrival {

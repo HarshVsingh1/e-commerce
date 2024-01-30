@@ -4,14 +4,15 @@ import Navbar from './components/navbar';
 import ProductCard from './components/subcomponents/productCard';
 import './productpage.css'
 import { useParams } from 'react-router-dom';
+import {  Box, CircularProgress } from '@mui/material';
 
 
 const Categoryproductpages = () => {
  
     const {category} = useParams()
-    console.log(category)
-  const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([])
 
+ 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -22,25 +23,23 @@ const Categoryproductpages = () => {
 
         const data = await response.json();
         setProducts(data);
-        console.log(data)
+        
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error('Error fetching products:', error); 
+        
       }
     };
 
     fetchProducts();
   }, []); 
 
-  if (products === null ) {
-    return (
-        <Box sx={{ display: 'flex' , justifyContent : "center" , alignItems : "center" , height : "100vh"}}>
-          <CircularProgress />
-        </Box>
-      );
-}
+
+
+
 
   return (
     <div> 
+             
         <div>
         <Navbar></Navbar>
         </div>
@@ -48,22 +47,31 @@ const Categoryproductpages = () => {
         <div>     
           <div id='filterPannel' >
 
-          </div>
-                <div  id='productDisplay' >
-                       {products.map((product) => (
-                         
-                         <ProductCard
-                       key={product._id}
-                       id={product._id}
-                       productName={product.productName}
-                       description={product.description}
-                       Price={product.price}
-                       Image={product.imageUrl}
-                       />
-                       
-                       ))}
-                 
-                 </div>
+          </div> 
+          {products.length == 0 ? (
+             <div id='loaderBox' >
+             <Box  >
+           <CircularProgress />
+         </Box>
+       </div>
+          ): (
+            <div  id='productDisplay' >
+            {products.map((product) => (
+              
+              <ProductCard
+            key={product._id}
+            id={product._id}
+            productName={product.productName}
+            description={product.description}
+            Price={product.price}
+            Image={product.imageUrl}
+            />
+            
+            ))}
+      
+      </div>
+          )}
+               
          </div>
 
         <div>

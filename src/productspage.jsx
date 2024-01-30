@@ -3,10 +3,13 @@ import Footer from './components/footer';
 import Navbar from './components/navbar';
 import ProductCard from './components/subcomponents/productCard';
 import './productpage.css'
+import {  Box  } from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 const Productpages = () => {
   const [products, setProducts] = useState([]);
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -26,16 +29,26 @@ const Productpages = () => {
 
     fetchProducts();
   }, []); 
-
+  
  
+
 
   return (
     <div> 
+          
         <div>
         <Navbar></Navbar>
         </div>
 
-        <div>     
+        {products.length == 0 ? ( 
+          <div id='loaderBox' >
+                <Box  >
+              <CircularProgress />
+            </Box>
+          </div>
+             
+        ) : (
+          <div>     
           <div id='filterPannel' >
 
           </div>
@@ -55,6 +68,9 @@ const Productpages = () => {
                  
                  </div>
          </div>
+        )}
+
+
 
         <div>
             <Footer></Footer>

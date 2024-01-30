@@ -8,6 +8,8 @@ import Signup from './signup'
 import Signin from './signin'
 import Singleproductview from './singleproduct'
 import Categoryproductpages from './categoryproductpage'
+import Cartpage from './cartpage'
+import Order from './orders'
 function App() {
 
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path='/signin' element={<Signin></Signin>} />
           <Route path='/product/:productId' element={<Singleproductview></Singleproductview>} />
           <Route path='/product/category/:category' element={<Categoryproductpages></Categoryproductpages>} />
+          <Route path='/cart' element={<Cartpage></Cartpage>} />
+          <Route path='/order' element={<Order></Order>} />
         </Routes>
        
       </Router>

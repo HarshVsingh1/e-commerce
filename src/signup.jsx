@@ -12,7 +12,7 @@ function Signup() {
     
     const [name,setName] = useState('')
     const [email,setEmail] = useState('')
-    const [Password,setPassword] = useState('')
+    const [password,setPassword] = useState('')
     const [message,setMessage] = useState('')
     const [servity,setServity] = useState('success')
     const [open,setOpen] = useState(false) ;
@@ -56,7 +56,7 @@ function Signup() {
                  body :  JSON.stringify({
                     name,
                      email ,
-                     Password
+                     password
                  }) 
                })
                console.log(response)

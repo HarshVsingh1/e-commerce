@@ -9,7 +9,8 @@ import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import { useNavigate } from 'react-router-dom';
 
 function BrowseCategories() {
-    const navigate = useNavigate()
+    const navigate = useNavigate() 
+    
     return (
         <> 
                   <div id='cardBlockCategory' >
